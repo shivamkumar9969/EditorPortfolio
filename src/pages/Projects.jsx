@@ -57,14 +57,13 @@ const projects = [
 export default function Projects() {
   return (
     <section className="text-white font-mono text-sm max-w-5xl mx-auto px-4">
-      <h2 className="text-base font-bold text-gray-400 mb-4"><span className="text-gray-500">//</span> Projects</h2>
+      <h2 className="text-base font-bold text-gray-500 mb-4"><span className="text-gray-500">{`//`}</span> Projects</h2>
       <div className="space-y-6">
         {projects.map((project, i) => (
           <div
             key={i}
             className="border border-gray-700 rounded overflow-hidden shadow-sm bg-[#1e1e1e]"
           >
-            {/* File tab header */}
             <div className="bg-[#2d2d2d] text-xs flex justify-between items-center px-4 py-1 text-gray-300 border-b border-gray-700">
               <span className="text-green-400">
                 {project.title.toLowerCase().replace(/\s+/g, "_")}.js
@@ -73,10 +72,7 @@ export default function Projects() {
                 ×
               </span>
             </div>
-
-            {/* Editor-like content */}
             <div className="flex px-4 py-3">
-              {/* Line numbers */}
               <div className="pr-4 text-gray-600 text-right select-none">
                 <code className="leading-6 block">
                   {[1, 2, 3, 4, 5, 6].map((n) => (
@@ -84,8 +80,6 @@ export default function Projects() {
                   ))}
                 </code>
               </div>
-
-              {/* Code content */}
               <div className="flex-1 text-gray-300">
                 <code className="leading-6 block whitespace-pre-wrap text-xs">
                   {`/**\n * Title: ${project.title}\n * Description: ${

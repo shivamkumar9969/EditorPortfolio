@@ -142,7 +142,7 @@ export default function Skills() {
   return (
     <div className="skills-section">
       <h2 className="skills-title">
-        <span className="text-gray-500">//</span> Skills & Technologies
+        <span className="text-gray-500">{`//`}</span> Skills & Technologies
       </h2>
       {skillCategories.map((group, groupIndex) => (
         <div key={group.category} className="category-section">
