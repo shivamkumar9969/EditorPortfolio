@@ -1,40 +1,39 @@
 import React, { useEffect, useState } from "react";
+const experiences = [
+  {
+    functionCall: "RackronExperience();",
+    company: "Rackron Technologies Pvt Ltd",
+    duration: "June 2024 – Present",
+    lines: [
+      "const responsibilities = [",
+      "  'Develop and maintain scalable backend systems using Node.js and Laravel',",
+      "  'Design and integrate secure RESTful APIs across multiple modules',",
+      "  'Collaborate with frontend teams to deliver complete features using the MERN stack',",
+      "  'Write efficient SQL and MongoDB queries for optimized performance',",
+      "  'Deploy and manage applications on cloud infrastructure (AWS)',",
+      "  'Follow Agile methodology for sprint planning and delivery'",
+      "];",
+      "deliverProjects(responsibilities);",
+    ],
+  },
+  {
+    functionCall: "DevTownInternship();",
+    company: "DevTown",
+    duration: "Sep 2023 – Nov 2023",
+    lines: [
+      "const contributions = [",
+      "  'Built dynamic UI components using React.js',",
+      "  'Integrated Node.js APIs and managed MongoDB data flow',",
+      "  'Participated in daily standups and Agile task tracking',",
+      "  'Worked closely with mentors to debug production-level issues',",
+      "  'Contributed to project documentation and team reviews'",
+      "];",
+      "gainHandsOnExperience(contributions);",
+    ],
+  },
+];
 
 export default function Experience() {
-  const experiences = [
-    {
-      functionCall: "RackronExperience();",
-      company: "Rackron Technologies Pvt Ltd",
-      duration: "June 2024 – Present",
-      lines: [
-        "const responsibilities = [",
-        "  'Develop and maintain scalable backend systems using Node.js and Laravel',",
-        "  'Design and integrate secure RESTful APIs across multiple modules',",
-        "  'Collaborate with frontend teams to deliver complete features using the MERN stack',",
-        "  'Write efficient SQL and MongoDB queries for optimized performance',",
-        "  'Deploy and manage applications on cloud infrastructure (AWS)',",
-        "  'Follow Agile methodology for sprint planning and delivery'",
-        "];",
-        "deliverProjects(responsibilities);",
-      ],
-    },
-    {
-      functionCall: "DevTownInternship();",
-      company: "DevTown",
-      duration: "Sep 2023 – Nov 2023",
-      lines: [
-        "const contributions = [",
-        "  'Built dynamic UI components using React.js',",
-        "  'Integrated Node.js APIs and managed MongoDB data flow',",
-        "  'Participated in daily standups and Agile task tracking',",
-        "  'Worked closely with mentors to debug production-level issues',",
-        "  'Contributed to project documentation and team reviews'",
-        "];",
-        "gainHandsOnExperience(contributions);",
-      ],
-    },
-  ];
-
   const [renderedItems, setRenderedItems] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [typedCommand, setTypedCommand] = useState("");
