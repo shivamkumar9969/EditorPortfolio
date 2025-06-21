@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+.vscode-portfolio {
+  height: 100vh;
+  display: flex;
+  font-family: "Fira Code", monospace;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  user-select: text;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 80px;
+  background-color: #252526;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  gap: 30px;
+}
+
+.sidebar-header {
+  font-weight: 900;
+  font-size: 28px;
+  color: #007acc;
+  user-select: none;
+}
+
+.sidebar-file-btn {
+  background: none;
+  border: none;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #cccccccc;
+  cursor: pointer;
+  padding: 6px 0;
+  width: 24px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar-file-btn:hover,
+.sidebar-file-btn.active {
+  color: #ffffff;
+  background-color: #0345a2;
+  border-radius: 6px;
+}
+
+.main-panel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tabs {
+  height: 36px;
+  background-color: #252526;
+  display: flex;
+  border-bottom: 1px solid #333333;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabs::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.tab {
+  background-color: #1e1e1e;
+  border: none;
+  padding: 6px 16px;
+  color: #cccccc;
+  font-size: 14px;
+  cursor: pointer;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: 2px solid transparent;
+  transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  background-color: #333333;
+}
+
+.tab.active {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-bottom-color: #007acc;
+  font-weight: 600;
+}
+
+.editor {
+  flex-grow: 1;
+  background-color: #1e1e1e;
+  padding: 20px 24px;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 4;
+  outline: none;
+  white-space: pre-wrap;
+}
+
+/* Prism theme overrides for VSCode look (tomorrow theme is already close) */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6a9955; /* greenish for comments */
+  font-style: italic;
+}
+
+.token.keyword {
+  color: #569cd6; /* blue */
+}
+
+.token.string {
+  color: #ce9178; /* orange */
+}
+
+.token.function {
+  color: #dcdcaa; /* cream */
+}
+
+.token.operator {
+  color: #d4d4d4;
+}
+
+.token.variable {
+  color: #9cdcfe;
+}
+
+.token.number {
+  color: #b5cea8;
+}
+
+/* Status bar */
+
+.status-bar {
+  height: 24px;
+  background-color: #007acc;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  justify-content: space-between;
+  user-select: none;
+}
+
+/* Scrollbar styling */
+
+.editor::-webkit-scrollbar {
+  width: 8px;
+}
+
+.editor::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.editor::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}

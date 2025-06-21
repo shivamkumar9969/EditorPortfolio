@@ -1,0 +1,131 @@
+/* Container */
+.about-container {
+  background-color: transparent;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 3rem 1rem; /* add top/bottom padding for breathing room */
+  text-align: center; /* center all content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Headings */
+.main-title {
+  font-size: 2.5rem; /* slightly bigger */
+  font-weight: 600;
+  margin: 0 0 1rem 0; /* margin bottom 1rem */
+  line-height: 1.3;
+}
+
+.name-title {
+  font-size: 3.5rem; /* larger for clear separation */
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.5rem; /* slightly bigger subtitle */
+  font-weight: 600;
+  margin: 0 0 2rem 0; /* more bottom spacing */
+  color: #bbbbbb;
+  letter-spacing: 0.05em;
+}
+
+/* About description */
+.about-description {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.7; /* increased line height for better readability */
+  white-space: pre-line;
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+  color: #dcdcdc;
+  user-select: text;
+}
+
+/* Social Links container */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Social Icon Buttons */
+.social-icon {
+  border-radius: 50%;
+  padding: 0.5rem;
+  color: #c0c0c0;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.5rem;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  color: white;
+  border-color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+/* CV Button */
+.cv-button {
+  background-color: #302f2f;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease;
+  padding: 0.8rem 1.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 auto;
+  user-select: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cv-button:hover,
+.cv-button:focus {
+  background-color: #4a4a4a;
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
+  .name-title {
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .about-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .social-icon {
+    width: 2.7rem;
+    height: 2.7rem;
+    font-size: 1.25rem;
+  }
+  .cv-button {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
+}

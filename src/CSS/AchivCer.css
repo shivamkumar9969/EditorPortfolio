@@ -1,0 +1,120 @@
+
+/* Container */
+.achievements-container {
+  color: #d4d4d4;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #1e1e1e;
+  padding: 2rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  user-select: text;
+}
+
+/* Section heading */
+.section-header {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #569cd6;
+  margin-bottom: 2rem;
+  user-select: text;
+  letter-spacing: 0.12em;
+  border-bottom: 1.5px solid #3c3c3c;
+  padding-bottom: 0.5rem;
+}
+
+/* Grid layout for certifications and awards - side by side on desktop */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Cards styling */
+.certifications-card,
+.awards-card {
+  background-color: #252526;
+  border: 1px solid #3c3c3c;
+  border-radius: 10px;
+  padding: 1.5rem 1.8rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 470px;
+  overflow-y: auto;
+  user-select: text;
+}
+
+/* Scrollbar styling */
+.certifications-card::-webkit-scrollbar,
+.awards-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.certifications-card::-webkit-scrollbar-thumb,
+.awards-card::-webkit-scrollbar-thumb {
+  background-color: #569cd6;
+  border-radius: 6px;
+}
+
+.certifications-card::-webkit-scrollbar-track,
+.awards-card::-webkit-scrollbar-track {
+  background-color: #1e1e1e;
+}
+
+/* Card headers */
+.card-header {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #61dafb;
+  border-bottom: 1.5px solid #3c3c3c;
+  padding-bottom: 0.4rem;
+  user-select: text;
+}
+
+/* Lists */
+.card-list {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  color: #b0b0b0;
+  overflow-wrap: break-word;
+}
+
+.list-item {
+  margin-bottom: 0.9rem;
+  line-height: 1.4;
+}
+
+.item-title {
+  color: #d4d4d4;
+  font-weight: 600;
+  user-select: text;
+}
+
+.item-issuer,
+.item-year {
+  font-weight: 400;
+  user-select: text;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .achievements-container {
+    padding: 1.5rem 1rem;
+  }
+  .section-header {
+    font-size: 1.5rem;
+  }
+  .certifications-card,
+  .awards-card {
+    max-height: none;
+    padding: 1rem 1rem;
+  }
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
