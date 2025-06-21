@@ -50,7 +50,7 @@ export default function AchievementCertifacte() {
       <h2 className="text-base font-bold text-gray-500 mb-6"><span className="text-gray-500">{`//`}</span>  Achievements & Certifications</h2>
 
       <div className="grid md:grid-cols-2 gap-10">
-        {`/* Certifications */`}
+        {/* Certifications */}
         <div>
           <h3 className="text-[#5a50f1] font-semibold mb-2">const certifications = [</h3>
           <div className="ml-6 text-[#DCDCAA] space-y-4">
@@ -65,7 +65,7 @@ export default function AchievementCertifacte() {
           <span className="text-[#4EC9B0] mt-1 block">]</span>
         </div>
 
-        {`/* Awards */`}
+        {/* Awards */}
         <div>
           <h3 className="text-[#5a50f1] font-semibold mb-2">const awards = [</h3>
           <div className="ml-6 text-[#DCDCAA] space-y-4">
