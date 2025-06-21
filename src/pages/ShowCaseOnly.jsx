@@ -3,7 +3,7 @@ import React from "react";
 export function GitIgnore() {
   return (
     <div className="text-white font-mono text-sm whitespace-pre-wrap">
-      <h2 className="text-base font-bold text-gray-400 mb-2">// .gitignore</h2>
+      <h2 className="text-base font-bold text-gray-400 mb-2"><span className="text-gray-500">//</span>  .gitignore</h2>
       <code>
         # Ignored node modules
         {"\n"}node_modules/
@@ -38,7 +38,7 @@ export function GitIgnore() {
 export function PackageJson() {
   return (
     <div className="text-white font-mono text-sm whitespace-pre-wrap">
-      <h2 className="text-base font-bold text-gray-400 mb-2">// package.json</h2>
+      <h2 className="text-base font-bold text-gray-400 mb-2"><span className="text-gray-500">//</span> package.json</h2>
       <code>
         {`{
   "name": "shivam-portfolio",
@@ -64,7 +64,7 @@ export function PackageJson() {
 }`}
       </code>
       <p className="text-xs text-gray-400 mt-4">
-        // Showcase only: Represents packages used in building this portfolio
+        <span className="text-gray-500">//</span> Showcase only: Represents packages used in building this portfolio
       </p>
     </div>
   );
@@ -73,7 +73,7 @@ export function PackageJson() {
 export function Readme() {
   return (
     <div className="text-white font-mono text-sm whitespace-pre-wrap">
-      <h2 className="text-base font-bold text-gray-400 mb-2">// README.md</h2>
+      <h2 className="text-base font-bold text-gray-400 mb-2"><span className="text-gray-500">//</span> README.md</h2>
       <code>
         {`# Shivam Kumar's VSCode Portfolio\n\nThis portfolio is built using React, Tailwind CSS, and mimics the Visual Studio Code interface for developer-centric presentation.\n\n## Features\n- File tree navigation\n- Markdown-style sections\n- Skills, Projects, Experience, and more\n- GitHub style .gitignore and package.json for realism\n\n> This README is for display purposes only.`}
       </code>

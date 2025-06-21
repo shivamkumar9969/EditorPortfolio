@@ -47,7 +47,7 @@ export default function AchievementCertifacte() {
 
   return (
     <section className="text-white font-mono text-sm px-4">
-      <h2 className="text-base font-bold text-gray-400 mb-6">// Achievements & Certifications</h2>
+      <h2 className="text-base font-bold text-gray-400 mb-6"><span className="text-gray-400">//</span>  Achievements & Certifications</h2>
 
       <div className="grid md:grid-cols-2 gap-10">
         {/* Certifications */}

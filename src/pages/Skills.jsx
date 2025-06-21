@@ -1,4 +1,3 @@
-// src/pages/Skills.jsx
 import React, { useEffect, useState } from "react";
 import "../CSS/Skills.css";
 
@@ -72,13 +71,12 @@ const skillCategories = [
         level: 75,
         note: "Used in major projects",
       },
-      
     ],
   },
   {
     category: "Backend / Frameworks",
     skills: [
-       {
+      {
         name: "Laravel",
         imgSrc: Laravel,
         level: 90,
@@ -97,7 +95,6 @@ const skillCategories = [
         level: 65,
         note: "SSR & routing basics",
       },
-     
     ],
   },
   {
@@ -136,15 +133,17 @@ const skillCategories = [
 ];
 
 export default function Skills() {
-  // State to trigger animation on mount
   const [loaded, setLoaded] = useState(false);
+
   useEffect(() => {
     setLoaded(true);
   }, []);
 
   return (
     <div className="skills-section">
-      <h2 className="skills-title ">// Skills & Technologies</h2>
+      <h2 className="skills-title">
+        <span className="text-gray-500">//</span> Skills & Technologies
+      </h2>
       {skillCategories.map((group, groupIndex) => (
         <div key={group.category} className="category-section">
           <h3 className="category-title">{group.category}</h3>

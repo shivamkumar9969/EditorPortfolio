@@ -38,7 +38,7 @@ export default function Experience() {
 
   return (
     <div className="text-white font-mono text-sm">
-      <h2 className="text-xl font-bold mb-4 text-gray-500">// Work Experience</h2>
+      <h2 className="text-xl font-bold mb-4 text-gray-500"> <span className="text-gray-500">//</span> Work Experience</h2>
       <div className="space-y-6">
         {experiences.map((exp, index) => (
           <div key={exp.id}>

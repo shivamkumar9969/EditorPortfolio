@@ -17,7 +17,6 @@ import Contact from "../pages/Contact";
 import AchievementCertifacte from "../pages/AchievementCertifacte";
 import { GitIgnore, PackageJson, Readme } from "../pages/ShowCaseOnly";
 
-// Portfolio structure
 const portfolioSections = [
   {
     id: "portfolio",

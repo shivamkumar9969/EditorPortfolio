@@ -74,7 +74,7 @@ export default function About() {
     >
       <div className="about-content max-w-4xl mx-auto text-center px-6 py-12 select-text">
         <h1 className="main-title text-left text-green-400 text-xl md:text-2xl">
-          // Hi, I'm <span className="text-blue-400">Shivam Kumar</span>
+          <span className="text-gray-500">//</span> Hi, I'm <span className="text-blue-400">Shivam Kumar</span>
         </h1>
 
         <h2 className="text-left font-mono text-sm text-gray-400 mb-4">
@@ -83,20 +83,14 @@ export default function About() {
           <span className="text-pink-400">"Web Developer"</span>;
         </h2>
 
-        <div className="bg-[#1e1e1e] border-l-4 border-blue-600 pl-4 py-2 text-sm text-gray-400 font-mono leading-relaxed">
+        <div className="bg-[#1e1e1e] border-l-4 border-blue-600 pl-4 py-2 text-sm text-gray-400 font-mono leading-relaxed text-left">
           <p>
-            /** <br />
-           &nbsp;* I'm an experienced web developer with a focus on building scalable, production-ready systems that perform in real-world environments. <br />
-
-            &nbsp;* I engineer dynamic frontends with React, and design robust,
-            secure APIs using Node.js and Laravel — all seamlessly deployed on
-            scalable AWS infrastructure. <br />
-            &nbsp;* I specialize in scalable architecture, high-performance
-            systems, and bridging the gap between engineering and business
-            goals. <br />
-            &nbsp;* I believe in writing code that’s not just functional — but
-            maintainable, efficient, and built to scale. <br />
-            &nbsp;*/ <br />
+            <span className="text-gray-500">/**</span> <br />
+            &nbsp;<span className="text-gray-500">*</span> I'm an experienced web developer with a focus on building scalable, production-ready systems that perform in real-world environments. <br />
+            &nbsp;<span className="text-gray-500">*</span> I engineer dynamic frontends with React, and design robust, secure APIs using Node.js and Laravel — all seamlessly deployed on scalable AWS infrastructure. <br />
+            &nbsp;<span className="text-gray-500">*</span> I specialize in scalable architecture, high-performance systems, and bridging the gap between engineering and business goals. <br />
+            &nbsp;<span className="text-gray-500">*</span> I believe in writing code that’s not just functional — but maintainable, efficient, and built to scale. <br />
+            <span className="text-gray-500">*/</span>
           </p>
         </div>
 
@@ -111,9 +105,7 @@ export default function About() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.ariaLabel}
-              className={`social-icon ${link.hoverClass} ${getActiveClasses(
-                idx
-              )}`}
+              className={`social-icon ${link.hoverClass} ${getActiveClasses(idx)}`}
               tabIndex={0}
             >
               <i className={`fa-brands ${link.icon}`} aria-hidden="true"></i>

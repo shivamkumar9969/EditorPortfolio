@@ -45,7 +45,7 @@ export default function Contacts() {
 
   return (
     <section className="text-white font-mono text-sm px-4">
-      <h2 className="text-base font-bold text-gray-400 mb-4">// Contact Me</h2>
+      <h2 className="text-base font-bold text-gray-400 mb-4"><span className="text-gray-500">//</span> Contact Me</h2>
 
       <form ref={form} onSubmit={sendEmail} className="max-w-2xl mx-auto space-y-4 bg-[#1e1e1e] p-6 border border-gray-700 rounded">
         {[
