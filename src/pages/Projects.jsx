@@ -3,6 +3,16 @@ import { ChevronLeft, ChevronRight, Github, ExternalLink, Play, Code, Database, 
 
 const projects = [
   {
+    title: "Crypto Automation",
+    description: "A powerful SaaS platform for automating crypto portfolio management, syncing real-time exchange data, executing secure API-based trades, and providing smart analytics for multi-user environments.",
+    tech: ["Next.js", "Node.js", "Express.js", "MongoDB", "JWT", "AES-256"],
+    link: "https://automationcrypto-git-main-shivam-kumars-projects-ef48f4a9.vercel.app/login",
+    github: "https://github.com/shivamkumar9969/cryptomanager.git",
+    icon: <Code className=\"w-6 h-6\" />,
+    color: "from-yellow-500 to-orange-500",
+    category: "SaaS / Automation"
+  },
+  {
     title: "EasyPeasy",
     description: "A full-featured rental platform for listing and managing rental properties with real-time availability, secure messaging, and payment gateway integration.",
     tech: ["React.js", "Node.js", "Tailwind CSS", "Express.js", "MongoDB"],
