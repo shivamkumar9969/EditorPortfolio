@@ -8,7 +8,7 @@ const projects = [
     tech: ["Next.js", "Node.js", "Express.js", "MongoDB", "JWT", "AES-256"],
     link: "https://automationcrypto-git-main-shivam-kumars-projects-ef48f4a9.vercel.app/login",
     github: "https://github.com/shivamkumar9969/cryptomanager.git",
-    icon: <Code className=\"w-6 h-6\" />,
+    icon: <Code className="w-6 h-6" />,
     color: "from-yellow-500 to-orange-500",
     category: "SaaS / Automation"
   },
