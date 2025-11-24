@@ -81,7 +81,7 @@ export default function About() {
         <h2 className="text-left font-mono text-sm text-gray-400 mb-4">
           <span className="text-yellow-400">const</span> role{" "}
           <span className="text-white">=</span>{" "}
-          <span className="text-pink-400">"Web Developer"</span>;
+          <span className="text-pink-400">"Software Developer"</span>;
         </h2>
 
         <div className="bg-[#1e1e1e] border-l-4 border-blue-600 pl-4 py-2 text-sm text-gray-400 font-mono leading-relaxed text-left whitespace-pre-wrap">
