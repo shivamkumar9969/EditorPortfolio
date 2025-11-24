@@ -87,7 +87,7 @@ export default function About() {
         <div className="bg-[#1e1e1e] border-l-4 border-blue-600 pl-4 py-2 text-sm text-gray-400 font-mono leading-relaxed text-left whitespace-pre-wrap">
           <p>
             {`/**
- * I'm an experienced web developer with a focus on building scalable, production-ready systems that perform in real-world environments.
+ * I specialize in building high-performance backend systems with Node.js, Next.js, Laravel designing secure REST APIs, optimizing database operations, and delivering architectures that scale effortlessly under real-world load.
  * I engineer dynamic frontends with React, and design robust, secure APIs using Node.js and Laravel — all seamlessly deployed on scalable AWS infrastructure.
  * I specialize in scalable architecture, high-performance systems, and bridging the gap between engineering and business goals.
  * I believe in writing code that’s not just functional — but maintainable, efficient, and built to scale.
