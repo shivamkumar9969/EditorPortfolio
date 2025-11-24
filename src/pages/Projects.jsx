@@ -212,244 +212,237 @@ export default function Projects() {
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="h-full bg-[#1e1e1e] text-gray-300 overflow-hidden relative"
-    >
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-gray-700 bg-[#252526]">
-        <div className="flex items-center space-x-4">
-          <h2 className="text-lg font-semibold text-white"> Projects.js </h2>
-          <div className="flex items-center space-x-2 text-sm text-gray-400">
-            <span>
-              Project {currentIndex + 1} of {projects.length}
-            </span>
-            <span>•</span>
-            <span className="text-blue-400">{currentProject.category}</span>
-          </div>
-        </div>
-
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={prevProject}
-            disabled={isAnimating}
-            className="p-2 hover:bg-gray-700 rounded disabled:opacity-50 transition-colors"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-
-          <div className="flex space-x-1">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToProject(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-blue-400 scale-125"
-                    : "bg-gray-600 hover:bg-gray-500"
-                }`}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={nextProject}
-            disabled={isAnimating}
-            className="p-2 hover:bg-gray-700 rounded disabled:opacity-50 transition-colors"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
+  <div
+    ref={containerRef}
+    className="h-full bg-[#1e1e1e] text-gray-300 overflow-hidden relative"
+  >
+    {/* Header */}
+    <div className="flex items-center justify-between p-4 border-b border-gray-700 bg-[#252526]">
+      <div className="flex items-center space-x-4">
+        <h2 className="text-lg font-semibold text-white"> Projects.js </h2>
+        <div className="flex items-center space-x-2 text-sm text-gray-400">
+          <span>
+            Project {currentIndex + 1} of {projects.length}
+          </span>
+          <span>•</span>
+          <span className="text-blue-400">{currentProject.category}</span>
         </div>
       </div>
 
-      {/* Main */}
-      <div className="flex h-[calc(100%-80px)]">
-        {/* Code editor */}
-        <div className="flex-1 flex">
-          <div className="w-12 bg-[#1e1e1e] text-right pr-2 py-4 text-gray-500 select-none text-sm border-r border-gray-700">
-            {Array.from({ length: lineCount + 5 }, (_, i) => (
-              <div key={i + 1} className="leading-6">
-                {i + 1}
-              </div>
-            ))}
-          </div>
+      <div className="flex items-center space-x-2">
+        <button
+          onClick={prevProject}
+          disabled={isAnimating}
+          className="p-2 hover:bg-gray-700 rounded disabled:opacity-50 transition-colors"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
 
-          <div className="flex-1 p-4 overflow-auto">
-            <div
-              className="transition-all duration-500 transform-gpu"
-              style={{
-                transform: `perspective(1000px) rotateY(${
-                  (mousePosition.x - 0.5) * 3
-                }deg) rotateX(${(mousePosition.y - 0.5) * -3}deg)`,
-              }}
-            >
-              <div className="font-mono text-sm leading-6">
-                <pre className="text-gray-300 whitespace-pre-wrap">
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: typingText
-                        .replace(
-                          /\/\/(.*)/g,
-                          '<span style="color: #6a9955;">// $1</span>'
-                        )
-                        .replace(
-                          /import|from|const|return|export|default/g,
-                          '<span style="color: #c586c0;">$&</span>'
-                        )
-                        .replace(
-                          /'([^']*)'/g,
-                          "<span style=\"color: #ce9178;\">'$1'</span>"
-                        )
-                        .replace(
-                          /\b(React|className|onClick|key|map)\b/g,
-                          '<span style="color: #9cdcfe;">$1</span>'
-                        )
-                        .replace(
-                          /\b(console\.log|handleDeploy)\b/g,
-                          '<span style="color: #dcdcaa;">$1</span>'
-                        ),
-                    }}
-                  />
-                  {isTyping && (
-                    <span className="inline-block w-2 h-5 bg-white animate-pulse ml-1" />
-                  )}
-                </pre>
-              </div>
+        <div className="flex space-x-1">
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToProject(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "bg-blue-400 scale-125"
+                  : "bg-gray-600 hover:bg-gray-500"
+              }`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={nextProject}
+          disabled={isAnimating}
+          className="p-2 hover:bg-gray-700 rounded disabled:opacity-50 transition-colors"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      </div>
+    </div>
+
+    {/* Main */}
+    <div className="flex flex-col md:flex-row h-[calc(100%-80px)]">
+      {/* Code editor */}
+      <div className="flex-1 flex">
+        <div className="w-12 bg-[#1e1e1e] text-right pr-2 py-4 text-gray-500 select-none text-sm border-r border-gray-700">
+          {Array.from({ length: lineCount + 5 }, (_, i) => (
+            <div key={i + 1} className="leading-6">
+              {i + 1}
+            </div>
+          ))}
+        </div>
+
+        <div className="flex-1 p-4 overflow-auto">
+          <div
+            className="transition-all duration-500 transform-gpu"
+            style={{
+              transform: `perspective(1000px) rotateY(${
+                (mousePosition.x - 0.5) * 3
+              }deg) rotateX(${(mousePosition.y - 0.5) * -3}deg)`,
+            }}
+          >
+            <div className="font-mono text-sm leading-6">
+              <pre className="text-gray-300 whitespace-pre-wrap">
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: typingText
+                      .replace(
+                        /\/\/(.*)/g,
+                        '<span style="color: #6a9955;">// $1</span>'
+                      )
+                      .replace(
+                        /import|from|const|return|export|default/g,
+                        '<span style="color: #c586c0;">$&</span>'
+                      )
+                      .replace(
+                        /'([^']*)'/g,
+                        "<span style=\"color: #ce9178;\">'$1'</span>"
+                      )
+                      .replace(
+                        /\b(React|className|onClick|key|map)\b/g,
+                        '<span style="color: #9cdcfe;">$1</span>'
+                      )
+                      .replace(
+                        /\b(console\.log|handleDeploy)\b/g,
+                        '<span style="color: #dcdcaa;">$1</span>'
+                      ),
+                  }}
+                />
+                {isTyping && (
+                  <span className="inline-block w-2 h-5 bg-white animate-pulse ml-1" />
+                )}
+              </pre>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Output preview */}
-        <div className="w-1/2 border-l border-gray-700 flex flex-col bg-[#1e1e1e]">
-          {/* Header */}
-          <div className="p-3 border-b border-gray-700 bg-[#252526] flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Play className="w-4 h-4 text-green-400" />
-              <span className="text-sm font-medium">Live Preview</span>
-            </div>
-
-            {showOutput && (
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-xs text-gray-400">Running</span>
-              </div>
-            )}
+      {/* Output preview */}
+      <div className="w-full md:w-1/2 border-t md:border-t-0 md:border-l border-gray-700 flex flex-col bg-[#1e1e1e]">
+        {/* Header */}
+        <div className="p-3 border-b border-gray-700 bg-[#252526] flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Play className="w-4 h-4 text-green-400" />
+            <span className="text-sm font-medium">Live Preview</span>
           </div>
 
-          {/* Main Output Box */}
-          <div className="flex-1 p-4 overflow-auto">
-            {showOutput ? (
-              <div
-                className="h-full transform transition-all duration-700 hover:scale-105"
-                style={{
-                  transform: `perspective(1000px) rotateY(${
-                    (mousePosition.x - 0.5) * -5
-                  }deg) rotateX(${(mousePosition.y - 0.5) * 5}deg)`,
-                }}
-              >
-                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-[#2a2a2a] to-black shadow-2xl h-full flex flex-col border border-yellow-500/20">
-                  {/* Subtle Gold Overlay */}
-                  <div className="absolute inset-0 bg-yellow-500/5 rounded-2xl" />
+          {showOutput && (
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <span className="text-xs text-gray-400">Running</span>
+            </div>
+          )}
+        </div>
 
-                  <div className="relative z-10 flex flex-col gap-4">
-                    {/* HEADER */}
-                    <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-yellow-500/20 border border-yellow-400/60 rounded-xl flex items-center justify-center text-yellow-300 shadow-md">
-                        {currentProject.icon}
-                      </div>
+        {/* Main Output Box */}
+        <div className="flex-1 p-4 overflow-auto">
+          {showOutput ? (
+            <div
+              className="min-h-full transform transition-all duration-700 hover:scale-105 flex flex-col"
+              style={{
+                transform: `perspective(1000px) rotateY(${
+                  (mousePosition.x - 0.5) * -5
+                }deg) rotateX(${(mousePosition.y - 0.5) * 5}deg)`,
+              }}
+            >
+              <div className="relative p-6 rounded-2xl bg-gradient-to-br from-[#2a2a2a] to-black shadow-2xl flex-1 flex flex-col border border-yellow-500/20 overflow-auto">
+                {/* Subtle Gold Overlay */}
+                <div className="absolute inset-0 bg-yellow-500/5 rounded-2xl" />
 
-                      <div>
-                        <div className="text-xs text-yellow-200/70 uppercase tracking-wide">
-                          {currentProject.category}
-                        </div>
-                        <h3 className="text-xl font-bold text-yellow-300 drop-shadow">
-                          {currentProject.title}
-                        </h3>
-                      </div>
+                <div className="relative z-10 flex flex-col gap-4">
+                  {/* HEADER */}
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-yellow-500/20 border border-yellow-400/60 rounded-xl flex items-center justify-center text-yellow-300 shadow-md">
+                      {currentProject.icon}
                     </div>
 
-                    {/* DESCRIPTION */}
-                    <p className="text-[#f5f5f5]/90 text-sm leading-relaxed">
-                      {currentProject.description}
-                    </p>
-
-                    {/* HEADER */}
                     <div>
-                      <div className="text-xs text-yellow-300/70 uppercase tracking-wide">
+                      <div className="text-xs text-yellow-200/70 uppercase tracking-wide">
                         {currentProject.category}
                       </div>
-                      <h3 className="text-2xl font-bold text-yellow-300 drop-shadow-sm">
+                      <h3 className="text-xl font-bold text-yellow-300 drop-shadow">
                         {currentProject.title}
                       </h3>
                     </div>
+                  </div>
 
-                    {/* TECH STACK */}
-                    <div>
-                      <div className="text-xs text-yellow-400 mb-1 font-semibold tracking-wide">
-                        TECH STACK
-                      </div>
+                  {/* DESCRIPTION */}
+                  <p className="text-[#f5f5f5]/90 text-sm leading-relaxed">
+                    {currentProject.description}
+                  </p>
 
-                      <div className="flex flex-wrap gap-2">
-                        {currentProject.tech.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-2 py-1 bg-yellow-500/10 border border-yellow-400/40 rounded-md 
-        text-xs text-yellow-200/90 font-medium shadow-sm"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                  {/* HEADER */}
+                  <div>
+                    <div className="text-xs text-yellow-300/70 uppercase tracking-wide">
+                      {currentProject.category}
+                    </div>
+                    <h3 className="text-2xl font-bold text-yellow-300 drop-shadow-sm">
+                      {currentProject.title}
+                    </h3>
+                  </div>
+
+                  {/* TECH STACK */}
+                  <div>
+                    <div className="text-xs text-yellow-400 mb-1 font-semibold tracking-wide">
+                      TECH STACK
                     </div>
 
-                    {/* BUTTONS */}
-                    <div className="flex gap-3 mt-1">
-                      {currentProject.github && (
-                        <a
-                          href={currentProject.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center px-4 py-2 
-      bg-black
-      text-white rounded-lg text-sm font-medium 
-      hover:bg-gray-900 transition-colors shadow-sm"
+                    <div className="flex flex-wrap gap-2">
+                      {currentProject.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 bg-yellow-500/10 border border-yellow-400/40 rounded-md 
+              text-xs text-yellow-200/90 font-medium shadow-sm"
                         >
-                          <Github className="w-4 h-4 mr-2" />
-                          Source Code
-                        </a>
-                      )}
-
-                      {currentProject.link && (
-                        <a
-                          href={currentProject.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center px-4 py-2 
-      bg-blue-950 border border-blue-950
-      text-white rounded-lg text-sm font-medium 
-      hover:bg-blue-500/20 transition-colors shadow-sm"
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Live Demo
-                        </a>
-                      )}
+                          {tech}
+                        </span>
+                      ))}
                     </div>
+                  </div>
 
-                    {/* NO EXTRA SPACE AFTER BUTTONS */}
+                  {/* BUTTONS */}
+                  <div className="flex flex-wrap gap-3 mt-1">
+                    {currentProject.github && (
+                      <a
+                        href={currentProject.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-900 transition-colors shadow-sm"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Source Code
+                      </a>
+                    )}
+
+                    {currentProject.link && (
+                      <a
+                        href={currentProject.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-4 py-2 bg-blue-950 border border-blue-950 text-white rounded-lg text-sm font-medium hover:bg-blue-500/20 transition-colors shadow-sm"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
-            ) : (
-              <div className="h-full flex items-center justify-center text-gray-500">
-                <div className="text-center">
-                  <Code className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                  <p className="text-sm">Compiling project...</p>
-                </div>
+            </div>
+          ) : (
+            <div className="h-full flex items-center justify-center text-gray-500">
+              <div className="text-center">
+                <Code className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                <p className="text-sm">Compiling project...</p>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
-  );
+  </div>
+);
+
 }
