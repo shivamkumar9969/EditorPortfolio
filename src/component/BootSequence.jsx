@@ -145,7 +145,7 @@ export default function BootSequence({ onComplete }) {
               style={{
                 color: getLineColor(line.type),
                 fontWeight: line.type === "ascii" ? 700 : line.type === "welcome" ? 600 : 400,
-                fontSize: line.type === "ascii" ? "11px" : line.type === "welcome" ? "15px" : "13px",
+                fontSize: line.type === "ascii" ? "min(11px, 2.2vw)" : line.type === "welcome" ? "15px" : "13px",
                 letterSpacing: line.type === "ascii" ? "0.5px" : "0",
                 whiteSpace: "pre",
               }}

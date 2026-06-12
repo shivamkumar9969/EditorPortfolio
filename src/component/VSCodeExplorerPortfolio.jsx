@@ -156,12 +156,33 @@ export default function VSCodeExplorerPortfolio() {
   const defaultFile = ALL_FILES[0]; // index.html
   const [openTabs, setOpenTabs] = useState([defaultFile]);
   const [selectedFile, setSelectedFile] = useState(defaultFile);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
   const [activeActivity, setActiveActivity] = useState("explorer");
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [statusItems] = useState({ branch: "main", errors: 0, warnings: 0 });
   const editorRef = useRef(null);
+
+  // Detect mobile view
+  useEffect(() => {
+    let wasMobile = window.innerWidth < 768;
+    setIsMobile(wasMobile);
+    if (wasMobile) {
+      setSidebarOpen(false);
+    }
+    
+    const checkMobile = () => {
+      const isCurrMobile = window.innerWidth < 768;
+      setIsMobile(isCurrMobile);
+      if (isCurrMobile !== wasMobile) {
+        setSidebarOpen(!isCurrMobile);
+        wasMobile = isCurrMobile;
+      }
+    };
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   /* ─── Tab Management ─── */
   const handleTabClick = useCallback(
@@ -272,9 +293,8 @@ export default function VSCodeExplorerPortfolio() {
                   : "text-gray-500 hover:text-gray-300"
               }`}
               onClick={() => {
-                if (item.id === "explorer") {
-                  setActiveActivity("explorer");
-                  setSidebarOpen(true);
+                if (activeActivity === item.id) {
+                  setSidebarOpen((prev) => !prev);
                 } else {
                   setActiveActivity(item.id);
                   setSidebarOpen(true);
@@ -310,12 +330,22 @@ export default function VSCodeExplorerPortfolio() {
       </div>
 
       {/* ─── Sidebar ─── */}
+      {isMobile && sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 z-20 transition-opacity duration-300"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
       <aside
-        className="border-r border-[#2b2b2b] flex flex-col flex-shrink-0 transition-all duration-300 overflow-hidden"
+        className={`${
+          isMobile
+            ? "absolute left-12 top-0 bottom-[22px] z-30 shadow-2xl border-r border-[#2b2b2b] flex flex-col transition-all duration-300 overflow-hidden"
+            : "border-r border-[#2b2b2b] flex flex-col flex-shrink-0 transition-all duration-300 overflow-hidden"
+        }`}
         style={{
           width: sidebarOpen ? "240px" : "0px",
           background: "#1f1f1f",
-          minWidth: sidebarOpen ? "200px" : "0px",
+          minWidth: (sidebarOpen && !isMobile) ? "200px" : "0px",
         }}
       >
         {/* Sidebar Header */}
@@ -424,7 +454,7 @@ export default function VSCodeExplorerPortfolio() {
           style={{ background: "#1e1e1e" }}
         >
           {/* Line numbers gutter */}
-          <div className="absolute left-0 top-0 bottom-0 w-[50px] border-r border-[#2b2b2b] pointer-events-none select-none"
+          <div className="absolute left-0 top-0 bottom-0 w-[50px] border-r border-[#2b2b2b] pointer-events-none select-none hidden md:block"
             style={{ background: "#1e1e1e", zIndex: 2 }}>
             <div className="pt-6 px-2 text-right text-[12px] text-gray-600 leading-[22px]" style={{ fontFamily: "'Fira Code', monospace" }}>
               {Array.from({ length: 40 }, (_, i) => (
@@ -434,7 +464,7 @@ export default function VSCodeExplorerPortfolio() {
           </div>
 
           {/* Content area */}
-          <div className="pl-[58px] pr-6 py-6" style={{ minHeight: "100%" }}>
+          <div className="pl-4 md:pl-[58px] pr-4 md:pr-6 py-4 md:py-6" style={{ minHeight: "100%" }}>
             {selectedFile.component ? (
               <div className="animate-fade-in" key={selectedFile.id}>
                 <selectedFile.component />

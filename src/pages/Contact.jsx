@@ -88,7 +88,7 @@ export default function Contacts() {
       >
         {fields.map(({ id, type, label, placeholder, lineNum }) => (
           <div key={id} className="text-gray-400 group">
-            <div className="flex items-center gap-1">
+            <div className="flex flex-wrap items-center gap-y-1">
               <span className="text-gray-600 text-xs w-5 text-right flex-shrink-0">{lineNum}</span>
               <span className="text-[#c586c0] ml-2">const</span>{" "}
               <span className="text-[#9cdcfe]">{label}</span>{" "}

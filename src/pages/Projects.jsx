@@ -214,7 +214,7 @@ export default function Projects() {
   return (
   <div
     ref={containerRef}
-    className="h-full bg-[#1e1e1e] text-gray-300 overflow-hidden relative"
+    className="h-full bg-[#1e1e1e] text-gray-300 overflow-y-auto md:overflow-hidden relative"
   >
     {/* Header */}
     <div className="flex items-center justify-between p-4 border-b border-gray-700 bg-[#252526]">
@@ -263,9 +263,9 @@ export default function Projects() {
     </div>
 
     {/* Main */}
-    <div className="flex flex-col md:flex-row h-[calc(100%-80px)]">
+    <div className="flex flex-col md:flex-row min-h-[calc(100%-80px)] md:h-[calc(100%-80px)] pb-8 md:pb-0">
       {/* Code editor */}
-      <div className="flex-1 flex">
+      <div className="flex-1 flex min-h-[250px] md:min-h-0">
         <div className="w-12 bg-[#1e1e1e] text-right pr-2 py-4 text-gray-500 select-none text-sm border-r border-gray-700">
           {Array.from({ length: lineCount + 5 }, (_, i) => (
             <div key={i + 1} className="leading-6">
@@ -320,7 +320,7 @@ export default function Projects() {
       </div>
 
       {/* Output preview */}
-      <div className="w-full md:w-1/2 border-t md:border-t-0 md:border-l border-gray-700 flex flex-col bg-[#1e1e1e]">
+      <div className="w-full md:w-1/2 border-t md:border-t-0 md:border-l border-gray-700 flex flex-col bg-[#1e1e1e] min-h-[350px] md:min-h-0">
         {/* Header */}
         <div className="p-3 border-b border-gray-700 bg-[#252526] flex items-center justify-between">
           <div className="flex items-center space-x-2">
