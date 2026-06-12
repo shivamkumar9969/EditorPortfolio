@@ -191,8 +191,11 @@ export default function VSCodeExplorerPortfolio() {
         prev.find((tab) => tab.id === file.id) ? prev : [...prev, file]
       );
       setSelectedFile(file);
+      if (isMobile) {
+        setSidebarOpen(false);
+      }
     },
-    []
+    [isMobile]
   );
 
   const handleTabClose = useCallback(
