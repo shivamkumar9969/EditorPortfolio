@@ -1,129 +1,96 @@
-/* Container */
+/* ============================================
+   ABOUT PAGE — Enhanced Styles
+   ============================================ */
+
 .about-container {
   background-color: transparent;
-  min-height: 100vh;
+  min-height: 80vh;
   color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 3rem 1rem; /* add top/bottom padding for breathing room */
-  text-align: center; /* center all content */
+  font-family: 'Fira Code', monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Headings */
-.main-title {
-  font-size: 2.5rem; /* slightly bigger */
-  font-weight: 600;
-  margin: 0 0 1rem 0; /* margin bottom 1rem */
-  line-height: 1.3;
-}
-
-.name-title {
-  font-size: 3.5rem; /* larger for clear separation */
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.2;
-}
-
-.subtitle {
-  font-size: 1.5rem; /* slightly bigger subtitle */
-  font-weight: 600;
-  margin: 0 0 2rem 0; /* more bottom spacing */
-  color: #bbbbbb;
-  letter-spacing: 0.05em;
-}
-
-/* About description */
-.about-description {
-  font-size: 1.125rem;
-  font-weight: 300;
-  line-height: 1.7; /* increased line height for better readability */
-  white-space: pre-line;
-  max-width: 720px;
-  margin: 0 auto 3rem auto;
-  color: #dcdcdc;
-  user-select: text;
-}
-
-/* Social Links container */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-/* Social Icon Buttons */
-.social-icon {
+/* Social Icon Enhanced */
+.social-icon-enhanced {
   border-radius: 50%;
   padding: 0.5rem;
   color: #c0c0c0;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
 
-.social-icon:hover,
-.social-icon:focus {
+.social-icon-enhanced:hover {
   color: white;
-  border-color: white;
-  outline: none;
-  cursor: pointer;
+  border-color: var(--glow-color, #007acc);
+  background: color-mix(in srgb, var(--glow-color, #007acc) 15%, transparent);
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--glow-color, #007acc) 30%, transparent),
+    0 0 40px color-mix(in srgb, var(--glow-color, #007acc) 15%, transparent);
+  transform: translateY(-3px) scale(1.1);
 }
 
-/* CV Button */
-.cv-button {
-  background-color: #302f2f;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: background-color 0.3s ease;
-  padding: 0.8rem 1.75rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  border-radius: 10px;
+.social-icon-enhanced:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* CV Button Enhanced */
+.cv-button-enhanced {
+  font-family: 'Fira Code', monospace;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
   color: #fff;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  margin: 0 auto;
   user-select: none;
-  border: none;
   cursor: pointer;
+  background: linear-gradient(135deg, #252526, #1e1e1e);
+  border: 1px solid rgba(0, 122, 204, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.cv-button:hover,
-.cv-button:focus {
-  background-color: #4a4a4a;
-  outline: none;
+.cv-button-enhanced:hover {
+  border-color: rgba(0, 122, 204, 0.6);
+  box-shadow:
+    0 0 15px rgba(0, 122, 204, 0.2),
+    0 0 30px rgba(0, 122, 204, 0.1),
+    0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.cv-button-enhanced:active {
+  transform: translateY(0);
 }
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
-  .main-title {
-    font-size: 1.8rem;
+  .about-container {
+    padding: 1rem 0;
   }
-  .name-title {
-    font-size: 2.5rem;
+
+  .social-icon-enhanced {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
   }
-  .subtitle {
-    font-size: 1.2rem;
-  }
-  .about-description {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-  .social-icon {
-    width: 2.7rem;
-    height: 2.7rem;
-    font-size: 1.25rem;
-  }
-  .cv-button {
+
+  .cv-button-enhanced {
     width: 100%;
     justify-content: center;
     padding: 0.75rem 1rem;
