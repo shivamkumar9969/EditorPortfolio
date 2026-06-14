@@ -44,7 +44,7 @@ export default function CommandPalette({ isOpen, onClose, onExecute }) {
     if (isOpen) {
       setQuery("");
       setSelectedIndex(0);
-      setTimeout(() => inputRef.current?.focus(), 50);
+      setTimeout(() => inputRef.current?.focus({ preventScroll: true }), 50);
     }
   }, [isOpen]);
 

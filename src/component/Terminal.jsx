@@ -180,7 +180,7 @@ export default function Terminal({ isOpen, onToggle, onOpenFile, height = 220 })
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      inputRef.current.focus();
+      inputRef.current.focus({ preventScroll: true });
     }
   }, [isOpen]);
 
@@ -355,7 +355,7 @@ export default function Terminal({ isOpen, onToggle, onOpenFile, height = 220 })
       <div
         ref={scrollRef}
         className="flex-1 overflow-y-auto px-4 py-2 text-xs leading-5"
-        onClick={() => inputRef.current?.focus()}
+        onClick={() => inputRef.current?.focus({ preventScroll: true })}
       >
         {history.map((entry, i) => (
           <div key={i} style={{ color: getColor(entry.type) }}>

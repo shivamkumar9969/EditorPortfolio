@@ -279,7 +279,7 @@ export default function VSCodeExplorerPortfolio() {
   ];
 
   return (
-    <div className="flex h-screen w-screen font-mono text-gray-300 relative" style={{ background: "#181818" }}>
+    <div className="flex h-screen w-screen font-mono text-gray-300 relative overflow-hidden" style={{ background: "#181818" }}>
       {/* ─── Activity Bar (far left icon strip) ─── */}
       <div className="w-12 flex flex-col items-center py-2 border-r border-[#2b2b2b] flex-shrink-0"
         style={{ background: "#181818" }}>
@@ -505,6 +505,7 @@ export default function VSCodeExplorerPortfolio() {
           isOpen={terminalOpen}
           onToggle={() => setTerminalOpen(false)}
           onOpenFile={openFileById}
+          height={isMobile ? 160 : 220}
         />
 
         {/* ─── Status Bar ─── */}
@@ -531,19 +532,19 @@ export default function VSCodeExplorerPortfolio() {
 
           {/* Right */}
           <div className="ml-auto flex items-center gap-3">
-            <span className="hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors">
+            <span className="hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors hidden sm:inline">
               Ln 1, Col 1
             </span>
-            <span className="hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors">
+            <span className="hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors hidden sm:inline">
               Spaces: 2
             </span>
-            <span className="hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors">
+            <span className="hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors hidden sm:inline">
               UTF-8
             </span>
-            <span className="hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors">
+            <span className="hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors hidden sm:inline">
               JavaScript
             </span>
-            <span className="flex items-center gap-1 hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors">
+            <span className="flex items-center gap-1 hover:bg-white/10 px-1.5 rounded cursor-pointer transition-colors hidden md:flex">
               <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
               Shivam Kumar
             </span>
